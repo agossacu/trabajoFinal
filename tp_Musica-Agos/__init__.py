@@ -28,5 +28,8 @@ def create_app(test_config=None):
     @app.route('/taylor')
     def taylor():
         return 'Taylor reina'
+    
+    from . import db
+    db.init_app(app)
 
     return app
