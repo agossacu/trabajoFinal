@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}-------{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+  {% for art in artista %}
+    <article class="post">
+      <header>
+        <div>
+            <h1>{{ art['Artista'] }}</h1>
+        </div>
+      </header>
+    </article>
+  {% endfor %}
+{% endblock %}
