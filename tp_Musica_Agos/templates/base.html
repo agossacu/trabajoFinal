@@ -2,9 +2,11 @@
 <title>{% block title %}{% endblock %} - Flaskr</title>
 <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 <nav>
-  <h1>Flaskr</h1>
+  <h1>Agospotify</h1>
   <ul>
-    <a href="">Canciones</a>
+    <li><a href="{{ url_for('tracks.index') }}">Canciones</a></li>
+    <li><a href="{{ url_for('artist.index') }}">Artistas</a></li>
+    <li><a href="{{ url_for('album.index') }}">Albums</a></li>
   </ul>
 </nav>
 <section class="content">

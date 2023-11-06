@@ -6,7 +6,7 @@ from werkzeug.exceptions import abort
 
 from tp_Musica_Agos.db import get_db
 
-bp = Blueprint('artist', __name__)
+bp = Blueprint('artist', __name__, url_prefix='/artist')
 
 @bp.route('/artist')
 def index():

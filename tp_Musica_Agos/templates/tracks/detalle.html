@@ -5,13 +5,13 @@
 {% endblock %}
 
 {% block content %}
-  {% for musi in tracks %}
+  
     <article class="post">
       <header>
         <div>
-          <a href="{{url_for('tracks.detalle', id=musi['trackId'])}}"><h1>{{ musi['Titulo'] }}</h1></a>
+          <h1>{{ track['Titulo'] }}</h1>
         </div>
       </header>
     </article>
-  {% endfor %}
+  
 {% endblock %}
