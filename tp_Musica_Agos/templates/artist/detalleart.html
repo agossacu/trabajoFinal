@@ -5,13 +5,13 @@
 {% endblock %}
 
 {% block content %}
-  {% for art in artista %}
+  
     <article class="post">
       <header>
         <div>
-            <a href="{{url_for('artists.detalleart', id=art['ArtistId'])}}"><h1>{{ art['Titulo'] }}</h1></a>
+          <h1>{{ artist['Titulo'] }}</h1>
         </div>
       </header>
     </article>
-  {% endfor %}
+  
 {% endblock %}

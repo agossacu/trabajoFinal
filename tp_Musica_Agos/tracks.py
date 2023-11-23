@@ -7,7 +7,7 @@ from werkzeug.exceptions import abort
 from tp_Musica_Agos.db import get_db
 
 bp = Blueprint('tracks', __name__, url_prefix="/track")
-
+bp = Blueprint('artists', __name__, url_prefix="/artist")
 @bp.route('/')
 def index():
     db = get_db()
@@ -42,3 +42,14 @@ def detalle(id):
          (id,)
     ).fetchone()
     return render_template('tracks/detalle.html', track=track)
+
+@bp.route('/<int:id>')
+def detalleart(id):
+    db = get_db()
+    artist = db.execute(
+        """SELECT a.name AS Artista
+         FROM artists a 
+         WHERE a.ArtistId = ?""",
+         (id,)
+    ).fetchone()
+    return render_template('artist/detalleart.html', artist=artist)
